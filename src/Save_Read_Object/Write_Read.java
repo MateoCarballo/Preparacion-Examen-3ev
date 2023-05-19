@@ -2,11 +2,9 @@ package Save_Read_Object;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 
-import Creacion_Ficheros.newFile;
+import Creacion_Ficheros.CreateFiles;
 
 public class Write_Read {
 
@@ -18,10 +16,10 @@ public class Write_Read {
         Arr.add(new Prueba("una"));
         Arr.add(new Prueba("prueba"));
 
-        newFile newFile = new newFile();
+        CreateFiles createFile = new CreateFiles();
         Write_Read save = new Write_Read();
         Collections.sort(Arr,(Prueba a ,Prueba b)->a.clasedePrueba.compareToIgnoreCase(b.clasedePrueba));
-        File fichero = newFile.createDatFile("Hola");
+        File fichero = createFile.createDatFile("Hola");
         save.writeObject(Arr, fichero);
         save.readObject(fichero);
 
